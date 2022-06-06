@@ -15,6 +15,9 @@ class CreateOrderTrackingsTable extends Migration
     {
         Schema::create('order_trackings', function (Blueprint $table) {
             $table->id();
+            $table->mediumText('detail')->nullable();
+            $table->string('status');
+            $table->foreignId('order_id')->constrained('orders');
             $table->timestamps();
         });
     }

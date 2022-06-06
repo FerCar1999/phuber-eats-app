@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('user');
             $table->string('password');
             $table->string('email')->unique();
-            $table->foreignId('user_type_id')->references('user_types');
+            $table->foreignId('user_type_id')->constrained('user_types');
             $table->timestamps();
         });
     }

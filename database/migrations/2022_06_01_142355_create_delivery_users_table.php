@@ -15,6 +15,16 @@ class CreateDeliveryUsersTable extends Migration
     {
         Schema::create('delivery_users', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone', 15);
+            $table->string('dui', 10);
+            $table->string('nit')->nullable();
+            $table->date('birthday');
+            $table->string('license_number');
+            $table->string('plate_number');
+            $table->string('vehicle_model');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

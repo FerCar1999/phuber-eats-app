@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('companies', 'company');
+Route::view('products', 'product');
+Route::view('users', 'user');
